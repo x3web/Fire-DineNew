@@ -2,12 +2,22 @@
 .featured-section .products {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 280px));
   justify-content: center;
+  justify-items: center;
 }
 
 .featured-section .product {
   border: 1px solid transparent !important;
   background: var(--fds-color-dark, #111) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: min(100%, 280px);
+  margin-inline: auto;
   transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease !important;
+}
+
+.featured-section .product > a,
+.featured-section .product-info {
+  width: 100%;
 }
 
 .featured-section .product:hover,
@@ -19,6 +29,12 @@
 
 .featured-section .product-info {
   background: var(--fds-color-dark, #111) !important;
+  align-items: center;
+  text-align: center;
+}
+
+.featured-section .product-info > * {
+  width: 100%;
 }
 
 .featured-section .product-info h3,

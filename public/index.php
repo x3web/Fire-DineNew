@@ -5,6 +5,9 @@ $root = dirname(__DIR__);
 $requested = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
 $static = realpath(__DIR__ . $requested);
 if (PHP_SAPI === 'cli-server' && $static !== false && str_starts_with($static, __DIR__ . DIRECTORY_SEPARATOR) && is_file($static)) return false;
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+header('Expires: 0');
 $autoload = $root . '/vendor/autoload.php';
 if (!is_file($autoload)) {
     http_response_code(503);
