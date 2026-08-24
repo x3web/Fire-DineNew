@@ -1,4 +1,9 @@
 /* Homepage full-bleed facts section. */
+.featured-section .products {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 280px));
+  justify-content: center;
+}
+
 .featured-section .product {
   border: 1px solid transparent !important;
   background: var(--fds-color-dark, #111) !important;
@@ -73,6 +78,10 @@
 }
 
 @media (max-width: 430px) {
+  .featured-section .products {
+    grid-template-columns: 1fr;
+  }
+
   .featured-section .fd-product-actions {
     grid-template-columns: 1fr !important;
   }
