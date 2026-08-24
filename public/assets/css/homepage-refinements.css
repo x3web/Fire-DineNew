@@ -1,5 +1,5 @@
 /* Homepage full-bleed facts section. */
-.featured-section .products {
+html body .featured-section .products {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 280px));
   gap: 24px;
@@ -10,7 +10,7 @@
   justify-items: center;
 }
 
-.featured-section .product {
+html body .featured-section .product {
   border: 1px solid transparent !important;
   background: var(--fds-color-dark, #111) !important;
   display: flex !important;
@@ -20,8 +20,8 @@
   transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease !important;
 }
 
-.featured-section .product > a,
-.featured-section .product-info {
+html body .featured-section .product > a,
+html body .featured-section .product-info {
   width: 100%;
 }
 
@@ -32,14 +32,15 @@
   box-shadow: 0 16px 38px rgba(17, 17, 17, 0.2);
 }
 
-.featured-section .product-info {
+html body .featured-section .product-info {
   background: var(--fds-color-dark, #111) !important;
   align-items: center;
   text-align: center;
 }
 
-.featured-section .product-info > * {
+html body .featured-section .product-info > * {
   width: 100%;
+  text-align: center;
 }
 
 .featured-section .product-info h3,
