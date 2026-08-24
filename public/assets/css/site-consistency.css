@@ -1,0 +1,333 @@
+/* Fire & Dine final consistency layer: loaded after fire-dine-premium.css. */
+@font-face{font-family:'Bebas Neue';src:url('/assets/fonts/brand/BebasNeue-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+:root{--font-primary:'Inter',Arial,sans-serif;--font-accent:'Inter',Arial,sans-serif;--heading-font:'Bebas Neue','Arial Narrow',sans-serif;--body-font:var(--font-primary);--summer-font:var(--font-accent);--hero-eyebrow-font:var(--font-accent);--hero-eyebrow-color:#fcbc4d;--fd-accent-gold:#fcbc4d;--fd-content-max:1500px;--fd-section-space:clamp(80px,8vw,120px)}
+html,body,button,input,select,textarea,a,p,span,li,label,summary,table,th,td,.nav,.utility-bar,.footer,.product,.card,.content-box,.quote,.cart-table,.temperature-table,.fd-cart-drawer,.x3-gallery-lightbox,.x3-video-lightbox{font-family:var(--font-primary)!important;font-weight:400!important}
+h1,h2,h3,h4,h5,h6,.hero h1,.page-hero h1,.section-head h2,.split-copy h2,.cta h2,.service-showcase h2,.footer h3{font-family:'Bebas Neue','Arial Narrow',sans-serif!important;font-weight:400!important;font-style:normal}
+.eyebrow,.hero-eyebrow,.section-eyebrow,.page-eyebrow,.kicker,.overline,.pre-title,.small-heading,.label-text,.service-kicker,.installation-kicker,.install-guidance-kicker,.quote-step-label,.category-card__eyebrow,.product-type,.sub-title,.tag-line,.best-for,.stand-guide-header>span{font-family:var(--font-accent)!important;font-weight:600!important;font-style:normal!important;font-size:16px!important;line-height:1.25!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:var(--hero-eyebrow-color)!important;opacity:1}
+.btn,.header-quote,.text-link,.gallery-filters button,.nav a{font-family:var(--font-primary)!important;font-weight:600!important;font-style:normal}
+strong,b{font-weight:500!important}
+.page-hero.hero-image-selected{background-image:linear-gradient(rgba(5,6,6,.68),rgba(5,6,6,.88)),var(--hero-desktop)!important;background-position:var(--hero-position,center center)!important;background-size:cover!important;background-repeat:no-repeat!important}
+@media(max-width:1024px){.page-hero.hero-image-selected{background-image:linear-gradient(rgba(5,6,6,.7),rgba(5,6,6,.9)),var(--hero-tablet,var(--hero-desktop))!important}}
+@media(max-width:600px){.page-hero.hero-image-selected{background-image:linear-gradient(rgba(5,6,6,.72),rgba(5,6,6,.92)),var(--hero-mobile,var(--hero-tablet,var(--hero-desktop)))!important;background-position:var(--hero-position-mobile,var(--hero-position,center center))!important}}
+
+/* Resolve inline hero custom-property URLs against the site root, not /assets/css/. */
+.page-hero[style*="about-us-consultation"]{--hero-desktop:url('/assets/images/hero-selected/about-us-consultation-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/about-us-consultation-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/about-us-consultation-960.webp')!important}
+.page-hero[style*="shop-product-showcase"]{--hero-desktop:url('/assets/images/hero-selected/shop-product-showcase-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/shop-product-showcase-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/shop-product-showcase-960.webp')!important}
+.page-hero[style*="installation-service"]{--hero-desktop:url('/assets/images/hero-selected/installation-service-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/installation-service-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/installation-service-960.webp')!important}
+.page-hero[style*="hero-02-craftsmanship"]{--hero-desktop:url('/assets/images/hero-selected/hero-02-craftsmanship-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/hero-02-craftsmanship-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/hero-02-craftsmanship-960.webp')!important}
+.page-hero[style*="hero-06-evening-gathering"]{--hero-desktop:url('/assets/images/hero-selected/hero-06-evening-gathering-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/hero-06-evening-gathering-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/hero-06-evening-gathering-960.webp')!important}
+.page-hero[style*="hero-04-product-showcase"]{--hero-desktop:url('/assets/images/hero-selected/hero-04-product-showcase-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/hero-04-product-showcase-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/hero-04-product-showcase-960.webp')!important}
+.page-hero[style*="hero-03-city-view-terrace"]{--hero-desktop:url('/assets/images/hero-selected/hero-03-city-view-terrace-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/hero-03-city-view-terrace-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/hero-03-city-view-terrace-960.webp')!important}
+.page-hero[style*="about-us-workshop"]{--hero-desktop:url('/assets/images/hero-selected/about-us-workshop-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/about-us-workshop-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/about-us-workshop-960.webp')!important}
+.page-hero[style*="hero-01-social-dining"]{--hero-desktop:url('/assets/images/hero-selected/hero-01-social-dining-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/hero-01-social-dining-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/hero-01-social-dining-960.webp')!important}
+.page-hero[style*="privacy-policy"]{--hero-desktop:url('/assets/images/hero-selected/privacy-policy-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/privacy-policy-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/privacy-policy-960.webp')!important}
+.page-hero[style*="terms-of-service"]{--hero-desktop:url('/assets/images/hero-selected/terms-of-service-1920.webp')!important;--hero-tablet:url('/assets/images/hero-selected/terms-of-service-1440.webp')!important;--hero-mobile:url('/assets/images/hero-selected/terms-of-service-960.webp')!important}
+.page-hero[style*="fire-dine-oven-range-comparison"]{--hero-desktop:url('/assets/images/custom/fire-dine-oven-range-comparison.webp')!important;--hero-tablet:url('/assets/images/custom/fire-dine-oven-range-comparison.webp')!important;--hero-mobile:url('/assets/images/custom/fire-dine-oven-range-comparison.webp')!important}
+
+html body .fd-single-overlay::before{background:rgba(0,0,0,.25)!important}
+html body .brochure-download .brochure-card .brochure-copy h2{color:#fff!important;background:transparent!important}
+html body .brochure-download .brochure-card .brochure-copy p{color:#fff!important}
+html body .brochure-download+.brochure-download{display:block!important}
+@media(min-width:1100px){
+html body .brochure-download:has(+.brochure-download),html body .brochure-download+.brochure-download{display:inline-block!important;width:50%!important;vertical-align:top!important}
+html body .brochure-download:has(+.brochure-download)>.shell,html body .brochure-download+.brochure-download>.shell{width:calc(100% - 32px)!important}
+html body .brochure-download:has(+.brochure-download) .brochure-card,html body .brochure-download+.brochure-download .brochure-card{grid-template-columns:minmax(0,180px) minmax(0,1fr)!important;gap:24px!important;padding:28px!important}
+html body .brochure-download:has(+.brochure-download) .brochure-cover,html body .brochure-download+.brochure-download .brochure-cover{max-height:300px!important}
+}
+.installation-page>.install-guidance-page{display:block!important;padding:64px 0 72px!important;background:#fbfaf7!important}
+.installation-page>.install-guidance-page .install-guidance-header,
+.installation-page>.install-guidance-page .install-guide-list,
+.installation-page>.install-guidance-page .install-guidance-note{display:none!important}
+.installation-page>.install-guidance-page .install-guidance-shell{max-width:1140px!important}
+.installation-page>.install-guidance-page .install-infographic-wrap{display:block!important;margin:0 auto!important;max-width:1076px!important}
+.installation-page>.install-guidance-page .install-infographic-card{margin:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
+.installation-page>.install-guidance-page .install-infographic-card picture,
+.installation-page>.install-guidance-page .install-infographic-card img{display:block!important;width:100%!important;height:auto!important;max-width:1076px!important;margin:0 auto!important}
+@media(max-width:900px){.installation-page>.install-guidance-page{padding:48px 0 56px!important}.installation-page>.install-guidance-page .install-guidance-shell{width:min(calc(100% - 40px),1140px)!important}}
+@media(max-width:600px){.installation-page>.install-guidance-page{padding:36px 0 42px!important}.installation-page>.install-guidance-page .install-guidance-shell{width:min(calc(100% - 24px),1140px)!important}}
+
+/* Home range overview: keep heading and description readable on the dark homepage section. */
+html body .range-overview.fd-alt-white .section-head h2,
+html body .range-overview.fd-alt-white .section-head p{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  opacity:1!important;
+  filter:none!important;
+  text-shadow:none!important;
+  mix-blend-mode:normal!important;
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+html body .range-overview.fd-alt-white .section-head h2 span,
+html body .range-overview.fd-alt-white .section-head p span{
+  color:inherit!important;
+  -webkit-text-fill-color:inherit!important;
+  opacity:1!important;
+  filter:none!important;
+  text-shadow:none!important;
+  mix-blend-mode:normal!important;
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+html body .range-overview .knowledge-grid{align-items:stretch!important}
+html body .range-overview .knowledge-grid>.content-box{display:flex!important;flex-direction:column!important;height:100%!important}
+html body .range-overview .knowledge-grid>.content-box .text-link{margin-top:auto!important;padding-top:18px!important}
+
+/* Internal/public heroes: centered column layout with balanced vertical breathing room. */
+html body main>section.page-hero,
+html body .product-page-hero{height:auto!important;min-height:clamp(500px,60vh,650px)!important;padding:clamp(96px,9vw,132px) 0!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+html body main>section.page-hero>.shell:not(.breadcrumbs),
+html body .product-page-hero>.shell{width:min(calc(100% - 64px),var(--max))!important;max-width:1000px!important;margin-inline:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important}
+html body main>section.page-hero>.breadcrumbs.shell{width:auto!important;max-width:min(calc(100% - 64px),1000px)!important;margin:0 auto 24px!important;display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:8px!important;text-align:center!important}
+html body main>section.page-hero .eyebrow,
+html body .product-page-hero .eyebrow{display:flex!important;justify-content:center!important;text-align:center!important;margin-inline:auto!important}
+html body main>section.page-hero h1,
+html body main>section.page-hero p,
+html body .product-page-hero h1,
+html body .product-page-hero p{margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+html body main>section.page-hero .actions,
+html body .product-page-hero .actions{justify-content:center!important;margin-left:auto!important;margin-right:auto!important}
+html body .product-page-hero{background-color:#111!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important;background-blend-mode:normal!important;overflow:hidden!important;isolation:isolate!important}
+html body .product-page-hero.fd-single-overlay::before{background:rgba(0,0,0,.25)!important;opacity:1!important;z-index:0!important}
+html body .product-page-hero.fd-single-overlay::after{display:none!important}
+html body .product-page-hero>.shell{position:relative!important;z-index:1!important}
+@media(max-width:1024px){
+html body main>section.page-hero,
+html body .product-page-hero{min-height:540px!important;padding:96px 0 88px!important}
+html body main>section.page-hero>.shell:not(.breadcrumbs),
+html body .product-page-hero>.shell{width:min(calc(100% - 48px),var(--max))!important}
+html body main>section.page-hero>.breadcrumbs.shell{max-width:calc(100% - 48px)!important}
+}
+@media(max-width:768px){
+html body main>section.page-hero,
+html body .product-page-hero{min-height:520px!important;padding:84px 0 72px!important}
+}
+@media(max-width:600px){
+html body main>section.page-hero,
+html body .product-page-hero{min-height:500px!important;padding:72px 0 60px!important}
+html body main>section.page-hero>.shell:not(.breadcrumbs),
+html body .product-page-hero>.shell{width:min(calc(100% - 32px),var(--max))!important}
+html body main>section.page-hero>.breadcrumbs.shell{max-width:calc(100% - 32px)!important;margin-bottom:18px!important}
+html body main>section.page-hero .actions,
+html body .product-page-hero .actions{width:100%!important;align-items:stretch!important}
+html body main>section.page-hero .actions .btn,
+html body .product-page-hero .actions .btn{width:100%!important;max-width:420px!important;margin-inline:auto!important}
+}
+
+/* Product-card and CTA small-copy typography: keep all microcopy on the primary brand font. */
+html body .product-info,
+
+html body .product-info .spec,
+html body .product-info .price,
+html body .product-info small,
+
+
+html body .product-detail .price,
+html body .product-detail label,
+html body .product-detail summary,
+
+html body .product-card__meta,
+html body .product-card__price,
+
+
+html body .cta small,
+html body .cta p,
+html body .site-final-cta small,
+html body .site-final-cta p{
+  font-family:var(--font-primary)!important;
+  font-weight:400!important;
+  font-style:normal!important;
+}
+
+/* Final CTA copy: keep the consultation eyebrow, heading and description white. */
+html body .site-final-cta .eyebrow,
+html body .site-final-cta h2,
+html body .site-final-cta p{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  opacity:1!important;
+}
+
+/* About page: make the text inside the light Where We Work note fully readable. */
+html body main.site-main>.about-where-section .supporting-note,
+html body main.site-main>.about-where-section .supporting-note p,
+html body main.site-main>.about-where-section .supporting-note span,
+html body main.site-main>.about-where-section .supporting-note strong{
+  color:#111!important;
+  -webkit-text-fill-color:#111!important;
+  opacity:1!important;
+  filter:none!important;
+  text-shadow:none!important;
+  mix-blend-mode:normal!important;
+}
+
+/* Contact Us: keep the confirmed contact heading copy black on the light section. */
+html body main section:has(.contact-facts)>.shell>.section-head .eyebrow,
+html body main section:has(.contact-facts)>.shell>.section-head h2,
+html body main section:has(.contact-facts)>.shell>.section-head p{
+  color:#111!important;
+  -webkit-text-fill-color:#111!important;
+  opacity:1!important;
+  filter:none!important;
+  text-shadow:none!important;
+  mix-blend-mode:normal!important;
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+html body main section:has(.contact-facts)>.shell>.section-head .eyebrow *,
+html body main section:has(.contact-facts)>.shell>.section-head h2 *,
+html body main section:has(.contact-facts)>.shell>.section-head p *{
+  color:inherit!important;
+  -webkit-text-fill-color:inherit!important;
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+html body main section:has(.contact-facts)>.shell>.section-head .eyebrow::selection,
+html body main section:has(.contact-facts)>.shell>.section-head h2::selection,
+html body main section:has(.contact-facts)>.shell>.section-head p::selection{
+  color:#111!important;
+  -webkit-text-fill-color:#111!important;
+}
+
+/* Shared eyebrow contract: one icon, colour, size, gap and baseline everywhere. */
+html body :is(.eyebrow,.hero-eyebrow,.section-eyebrow,.page-eyebrow,.service-kicker,.installation-kicker,.install-guidance-kicker){
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center;
+  gap:8px!important;
+  min-height:20px;
+  margin-top:0;
+  margin-bottom:16px!important;
+  color:var(--fd-accent-gold)!important;
+}
+html body :is(.eyebrow,.hero-eyebrow,.section-eyebrow,.page-eyebrow,.service-kicker,.installation-kicker,.install-guidance-kicker) .eyebrow-icon{
+  display:block!important;
+  flex:0 0 14px!important;
+  width:14px!important;
+  height:18px!important;
+  min-width:14px!important;
+  max-width:14px!important;
+  min-height:18px!important;
+  max-height:18px!important;
+  margin:0!important;
+  object-fit:contain!important;
+  opacity:1!important;
+}
+
+/* Equivalent section shells, headings and copy share the same alignment rhythm. */
+html body :is(.section,.page-section)>.shell{
+  width:min(calc(100% - 64px),var(--fd-content-max))!important;
+  margin-inline:auto!important;
+}
+html body .section-head{
+  width:100%;
+  max-width:900px;
+  margin:0 auto clamp(36px,4vw,56px)!important;
+}
+html body .section-head h2{
+  margin:0 0 18px!important;
+  line-height:1.02!important;
+}
+html body .section-head p{
+  max-width:760px;
+  margin:0 auto!important;
+  line-height:1.65!important;
+}
+html body .section-head.aligned-left p{
+  margin-left:0!important;
+}
+
+/* Same-grid cards stretch evenly and keep their existing CTA at the baseline. */
+html body :is(.cards,.products,.knowledge-grid,.quote-grid){
+  align-items:stretch!important;
+}
+html body :is(.cards,.products,.knowledge-grid) > :is(.card,.product,.content-box){
+  min-width:0;
+  height:100%;
+}
+html body :is(.card-body,.product-info){
+  display:flex!important;
+  flex:1 1 auto;
+  flex-direction:column!important;
+}
+html body :is(.card-body,.product-info) > :is(.btn,.text-link):last-child{
+  margin-top:auto!important;
+}
+
+/* Prevent the legacy generated label from appearing beside the existing category CTA. */
+html body .category-section .text-link{
+  font-size:0!important;
+}
+html body .category-section .text-link::after{
+  content:"Explore"!important;
+  font-family:var(--font-primary)!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  letter-spacing:.13em!important;
+  text-transform:uppercase!important;
+}
+
+/* Reusable button geometry; colour variants and destinations remain unchanged. */
+html body :is(.btn,.button,.service-wide-button){
+  box-sizing:border-box;
+  min-height:54px;
+  align-items:center;
+  justify-content:center;
+  line-height:1.2!important;
+}
+html body .actions{
+  align-items:stretch;
+  gap:14px;
+}
+
+/* The three product-family heroes use production-safe, root-relative images. */
+body[data-landing="residential"]{--fd-family-hero-desktop:url('/assets/images/fire-and-dine/range-heroes/residential-pizza-ovens-1916.webp');--fd-family-hero-tablet:url('/assets/images/fire-and-dine/range-heroes/residential-pizza-ovens-1440.webp');--fd-family-hero-mobile:url('/assets/images/fire-and-dine/range-heroes/residential-pizza-ovens-960.webp')}
+body[data-landing="commercial"]{--fd-family-hero-desktop:url('/assets/images/fire-and-dine/range-heroes/commercial-pizza-ovens-1916.webp');--fd-family-hero-tablet:url('/assets/images/fire-and-dine/range-heroes/commercial-pizza-ovens-1440.webp');--fd-family-hero-mobile:url('/assets/images/fire-and-dine/range-heroes/commercial-pizza-ovens-960.webp')}
+body[data-landing="outdoor"]{--fd-family-hero-desktop:url('/assets/images/fire-and-dine/range-heroes/outdoor-models-1916.webp');--fd-family-hero-tablet:url('/assets/images/fire-and-dine/range-heroes/outdoor-models-1440.webp');--fd-family-hero-mobile:url('/assets/images/fire-and-dine/range-heroes/outdoor-models-960.webp')}
+html body:is([data-landing="residential"],[data-landing="commercial"],[data-landing="outdoor"]) main>section.page-hero{
+  min-height:690px!important;
+  padding:72px 0 68px!important;
+  background-image:linear-gradient(180deg,rgba(5,6,6,.34),rgba(5,6,6,.42) 58%,rgba(5,6,6,.55)),var(--fd-family-hero-desktop)!important;
+  background-position:var(--hero-position,center center)!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+}
+
+/* Keep the global navigation, footer icons and floating controls stable across pages. */
+html body .header,
+html body .header.scrolled{
+  background:#111!important;
+}
+html body .footer :is(.trust-points i,.footer-link-list a::before,.footer-contact-list i,.socials a,.social-placeholder,.footer-col h3::before){
+  color:var(--gold2)!important;
+  border-color:currentColor!important;
+}
+html body .floating-actions{
+  right:max(18px,env(safe-area-inset-right))!important;
+  bottom:max(20px,env(safe-area-inset-bottom))!important;
+}
+
+@media(max-width:1024px){
+  html body :is(.section,.page-section)>.shell{width:min(calc(100% - 48px),var(--fd-content-max))!important}
+  html body:is([data-landing="residential"],[data-landing="commercial"],[data-landing="outdoor"]) main>section.page-hero{
+    min-height:600px!important;
+    padding:64px 0 56px!important;
+    background-image:linear-gradient(180deg,rgba(5,6,6,.38),rgba(5,6,6,.46) 58%,rgba(5,6,6,.58)),var(--fd-family-hero-tablet)!important;
+  }
+}
+@media(max-width:600px){
+  html body :is(.section,.page-section)>.shell{width:min(calc(100% - 32px),var(--fd-content-max))!important}
+  html body .section-head{margin-bottom:34px!important}
+  html body:is([data-landing="residential"],[data-landing="commercial"],[data-landing="outdoor"]) main>section.page-hero{
+    min-height:560px!important;
+    padding:48px 0 44px!important;
+    background-image:linear-gradient(180deg,rgba(5,6,6,.42),rgba(5,6,6,.5) 58%,rgba(5,6,6,.62)),var(--fd-family-hero-mobile)!important;
+    background-position:var(--hero-position-mobile,center center)!important;
+  }
+  html body :is(.btn,.button,.service-wide-button){min-height:52px}
+  html body .floating-actions{right:14px!important;bottom:calc(14px + env(safe-area-inset-bottom))!important}
+}

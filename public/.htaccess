@@ -1,0 +1,60 @@
+Options -Indexes
+ServerSignature Off
+
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always unset X-Powered-By
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Permissions-Policy "camera=(), geolocation=(), microphone=(), payment=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" "expr=%{HTTPS} == 'on'"
+</IfModule>
+
+RewriteEngine On
+
+# Defence in depth if a host is accidentally pointed above the intended
+# document root or private build folders are copied below public/.
+RewriteRule ^(?:database|storage|config|src|vendor|tests|bin)(?:/|$) - [F,L,NC]
+
+RewriteCond %{THE_REQUEST} \s/+index\.php(?:[?\s]) [NC]
+RewriteRule ^index\.php$ / [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^about-us(?:\.html)?$ /about [R=301,L,NC]
+RewriteRule ^contact-us(?:\.html)?$ /contact [R=301,L,NC]
+RewriteRule ^installations(?:\.html)?$ /installation [R=301,L,NC]
+RewriteRule ^showroom(?:\.html)?$ /gallery [R=301,L,NC]
+RewriteRule ^product-category(?:\.html)?$ /category [R=301,L,NC]
+RewriteRule ^maintenance(?:\.html)?$ /installation#maintenance [R=301,L,NE,NC]
+RewriteRule ^shop\.php$ /shop [R=301,L,NC]
+RewriteRule ^gallery\.php$ /gallery [R=301,L,NC]
+RewriteRule ^quote-basket\.php$ /cart [R=301,L,NC]
+RewriteRule ^request-quote\.php$ /checkout [R=301,L,NC]
+RewriteRule ^api/brochure\.php$ /api/brochure [R=301,L,NE,NC,QSA]
+RewriteRule ^api/([A-Za-z0-9_-]+)\.php$ /api/$1 [R=301,L,NE,NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L,NE,NC]
+
+# Permanent mappings for the three Phase 4 product-slug corrections.
+RewriteCond %{QUERY_STRING} (^|&)slug=countertop-oven(&|$) [NC]
+RewriteRule ^product(?:\.php)?/?$ /product?slug=counter-top-oven [R=301,L,NE]
+RewriteCond %{QUERY_STRING} (^|&)slug=fabricato-commercial-range(&|$) [NC]
+RewriteRule ^product(?:\.php)?/?$ /product?slug=premium-pre-fabricato-range [R=301,L,NE]
+RewriteCond %{QUERY_STRING} (^|&)slug=neapolitan-commercial-range(&|$) [NC]
+RewriteRule ^product(?:\.php)?/?$ /product?slug=forno-neapolitan-range [R=301,L,NE]
+RewriteRule ^product/countertop-oven/?$ /product/counter-top-oven [R=301,L,NC]
+RewriteRule ^product/fabricato-commercial-range/?$ /product/premium-pre-fabricato-range [R=301,L,NC]
+RewriteRule ^product/neapolitan-commercial-range/?$ /product/forno-neapolitan-range [R=301,L,NC]
+
+# /admin is also a real public asset directory. Route only the directory URL
+# through PHP so Apache does not return 403 before the admin controller runs.
+RewriteRule ^admin/?$ index.php [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+DirectoryIndex index.php

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 330" role="img" aria-labelledby="title desc">
+<title id="title">Fire &amp; Dine</title><desc id="desc">Gold flame and Fire &amp; Dine wordmark</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6c05d"/><stop offset=".5" stop-color="#e99a28"/><stop offset="1" stop-color="#a95c12"/></linearGradient></defs>
+<g fill="url(#g)">
+<path d="M260 18c20 40 4 59-9 78 10-2 23-12 28-30 30 36 31 72 15 97-15 24-40 37-64 37-43 0-78-31-78-74 0-25 12-48 35-75-2 28 10 43 23 51-2-32 11-58 50-84z"/>
+<path d="M244 91c17 20 20 37 9 52-7 10-17 15-28 15-20 0-35-15-35-34 0-12 6-24 18-38 0 17 7 25 15 30-2-15 4-24 21-25z" fill="#17100b" opacity=".72"/>
+</g>
+<text x="260" y="252" text-anchor="middle" fill="url(#g)" font-family="Georgia, 'Times New Roman', serif" font-size="66" letter-spacing="9">FIRE &amp; DINE</text>
+<path d="M96 285h125m78 0h125" stroke="url(#g)" stroke-width="2"/><path d="M260 276l9 9-9 9-9-9z" fill="url(#g)"/>
+<text x="260" y="322" text-anchor="middle" fill="#d98937" font-family="Arial, sans-serif" font-size="18" letter-spacing="8">LIVE FIRE. FINE TASTE.</text>
+</svg>

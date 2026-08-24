@@ -1,0 +1,14 @@
+Options -Indexes
+ServerSignature Off
+
+<FilesMatch "^(?:\.env|composer\.(?:json|lock)|README\.md|CHANGELOG\.md|VERSION|phpunit\.xml)$">
+    Require all denied
+</FilesMatch>
+
+RewriteEngine On
+RewriteRule ^(?:bootstrap|config|database|docs|resources|src|storage|tests|vendor|bin)(?:/|$) - [F,L,NC]
+RewriteRule ^$ public/index.php [QSA,L]
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.+)$ public/$1 [QSA,L]
+
+DirectoryIndex public/index.php

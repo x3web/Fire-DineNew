@@ -1,0 +1,17 @@
+Options -Indexes
+
+# Uploaded files are data only. Never allow executable/script content here.
+<FilesMatch "\.(?:php[0-9]?|phtml|phar|cgi|pl|py|sh|shtml|htm|html|js|mjs)$">
+    Require all denied
+</FilesMatch>
+
+# Browser-facing media may be served directly. Brochure covers are further
+# restricted to generated filenames by /uploads/brochures/.htaccess.
+<FilesMatch "\.(?:jpe?g|png|webp|gif|avif|mp4|webm)$">
+    Require all granted
+</FilesMatch>
+
+# Keep non-media uploads private unless they are served through an authenticated PHP endpoint.
+<FilesMatch "\.(?:pdf|csv|txt|json|xml|zip|sql|log|env|ini|conf|bak)$">
+    Require all denied
+</FilesMatch>

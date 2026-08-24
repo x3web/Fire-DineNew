@@ -1,0 +1,1 @@
+Private attachments are deliberately not packaged. Store them outside the web root and serve them only through authorized download handlers.

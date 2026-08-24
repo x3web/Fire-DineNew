@@ -1,0 +1,6 @@
+Options -Indexes
+Require all denied
+
+<FilesMatch "^[a-f0-9]{40}\.(?:jpe?g|png|webp|gif|avif)$">
+  Require all granted
+</FilesMatch>
