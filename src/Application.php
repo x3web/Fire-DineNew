@@ -33,6 +33,7 @@ final class Application
                 '/'=>$this->frontendPage('home'),'/shop'=>$this->frontendPage('shop'),'/category'=>$this->shop(),'/product'=>$this->frontendPage('product'),
                 '/cart','/checkout'=>$this->checkout(),'/about'=>$this->frontendPage('about'),'/installation'=>$this->frontendPage('installation'),'/gallery'=>$this->frontendPage('gallery'),
                 '/contact'=>$this->contact(),'/faq','/faqs'=>$this->frontendPage('faqs'),'/privacy-policy'=>$this->frontendPage('privacy-policy'),'/terms','/terms-of-service'=>$this->frontendPage('terms'),
+                '/account'=>$this->frontendPage('account'),'/thank-you'=>$this->frontendPage('thank-you'),
                 '/accessories'=>$this->frontendPage('accessories'),'/advice'=>$this->frontendPage('advice'),'/commercial-ovens'=>$this->frontendPage('commercial-ovens'),
                 '/compare'=>$this->frontendPage('compare'),'/diy-ovens'=>$this->frontendPage('diy-ovens'),'/fireplaces'=>$this->frontendPage('fireplaces'),
                 '/mobile-compact-ovens'=>$this->frontendPage('mobile-compact-ovens'),'/outdoor-models'=>$this->frontendPage('outdoor-models'),
