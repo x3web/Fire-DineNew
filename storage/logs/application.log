@@ -1,0 +1,42 @@
+[24-Aug-2026 16:45:11 UTC] PDOException: could not find driver in E:\github\Fire-DineNew\src\Database.php:19
+Stack trace:
+#0 E:\github\Fire-DineNew\src\Database.php(19): PDO->__construct('mysql:host=127....', 'FndTest01', Object(SensitiveParameterValue), Array)
+#1 E:\github\Fire-DineNew\bootstrap\app.php(53): FireDine\Database::connect()
+#2 E:\github\Fire-DineNew\public\index.php(19): require('E:\\github\\Fire-...')
+#3 E:\github\Fire-DineNew\tests\router.php(7): require('E:\\github\\Fire-...')
+#4 {main}
+
+Next RuntimeException: Database connection failed. Check the configured MariaDB service and .env values. in E:\github\Fire-DineNew\src\Database.php:30
+Stack trace:
+#0 E:\github\Fire-DineNew\bootstrap\app.php(53): FireDine\Database::connect()
+#1 E:\github\Fire-DineNew\public\index.php(19): require('E:\\github\\Fire-...')
+#2 E:\github\Fire-DineNew\tests\router.php(7): require('E:\\github\\Fire-...')
+#3 {main}
+[24-Aug-2026 16:45:11 UTC] PDOException: could not find driver in E:\github\Fire-DineNew\src\Database.php:19
+Stack trace:
+#0 E:\github\Fire-DineNew\src\Database.php(19): PDO->__construct('mysql:host=127....', 'FndTest01', Object(SensitiveParameterValue), Array)
+#1 E:\github\Fire-DineNew\bootstrap\app.php(53): FireDine\Database::connect()
+#2 E:\github\Fire-DineNew\public\index.php(19): require('E:\\github\\Fire-...')
+#3 E:\github\Fire-DineNew\tests\router.php(7): require('E:\\github\\Fire-...')
+#4 {main}
+
+Next RuntimeException: Database connection failed. Check the configured MariaDB service and .env values. in E:\github\Fire-DineNew\src\Database.php:30
+Stack trace:
+#0 E:\github\Fire-DineNew\bootstrap\app.php(53): FireDine\Database::connect()
+#1 E:\github\Fire-DineNew\public\index.php(19): require('E:\\github\\Fire-...')
+#2 E:\github\Fire-DineNew\tests\router.php(7): require('E:\\github\\Fire-...')
+#3 {main}
+[24-Aug-2026 16:45:24 UTC] PDOException: could not find driver in E:\github\Fire-DineNew\src\Database.php:19
+Stack trace:
+#0 E:\github\Fire-DineNew\src\Database.php(19): PDO->__construct('mysql:host=127....', 'FndTest01', Object(SensitiveParameterValue), Array)
+#1 E:\github\Fire-DineNew\bootstrap\app.php(53): FireDine\Database::connect()
+#2 E:\github\Fire-DineNew\public\index.php(19): require('E:\\github\\Fire-...')
+#3 E:\github\Fire-DineNew\tests\router.php(7): require('E:\\github\\Fire-...')
+#4 {main}
+
+Next RuntimeException: Database connection failed. Check the configured MariaDB service and .env values. in E:\github\Fire-DineNew\src\Database.php:30
+Stack trace:
+#0 E:\github\Fire-DineNew\bootstrap\app.php(53): FireDine\Database::connect()
+#1 E:\github\Fire-DineNew\public\index.php(19): require('E:\\github\\Fire-...')
+#2 E:\github\Fire-DineNew\tests\router.php(7): require('E:\\github\\Fire-...')
+#3 {main}

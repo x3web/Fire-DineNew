@@ -1,6 +1,11 @@
 /* Homepage full-bleed facts section. */
 .featured-section .products {
+  display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 280px));
+  gap: 24px;
+  width: 100%;
+  margin-inline: auto;
+  place-content: center;
   justify-content: center;
   justify-items: center;
 }
